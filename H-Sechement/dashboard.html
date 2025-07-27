@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSOM - H-Sèchement Security & Recovery Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <script src="../_shared/chart-utils.js"></script>
+    <link rel="stylesheet" href="../_shared/base-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* H-Sechement Specific Styles */
+        
+        .recovery-timeline {
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .recovery-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, #EF4444 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, #FFDD00 0%, transparent 50%);
+            opacity: 0.05;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--osom-white);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .incident-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid #EF4444;
+            color: #EF4444;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .recovery-badge {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid #10B981;
+            color: #10B981;
+        }
+
+        .timeline-phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .phase-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .phase-card:hover {
+            border-color: var(--osom-yellow);
+            transform: translateY(-5px);
+        }
+
+        .phase-number {
+            width: 3rem;
+            height: 3rem;
+            background: var(--osom-yellow);
+            color: var(--osom-black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .phase-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--osom-white);
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-period {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .phase-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.98);
+            border: 1px solid rgba(255, 221, 0, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-card:hover {
+            border-color: var(--osom-yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 221, 0, 0.15);
+        }
+
+        .metric-icon {
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(135deg, var(--osom-yellow), #F59E0B);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--osom-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            color: var(--osom-gray);
+            margin-bottom: 1rem;
+        }
+
+        .metric-change {
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+        }
+
+        .metric-change.positive {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10B981;
+        }
+
+        .metric-change.negative {
+            background: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+        }
+
+        .chart-container {
+            background: var(--osom-white);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--osom-black);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .osom-logo {
+            max-width: 200px;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-phases {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .metric-value {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header avec branding OSOM -->
+        <header style="text-align: center; padding: 2rem 0; background: white; border-radius: 1rem; margin-bottom: 2rem;">
+            <svg class="osom-logo" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                <text x="20" y="35" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="#000">OSOM</text>
+                <text x="100" y="35" font-family="Inter, sans-serif" font-size="16" fill="#666">Digital Agency</text>
+            </svg>
+            <h1 style="color: var(--osom-black); font-size: 2rem; margin-top: 1rem;">H-Sèchement - Security & Recovery Dashboard</h1>
+            <p style="color: var(--osom-gray); margin-top: 0.5rem;">Détection, Résolution & Suivi de Performance</p>
+        </header>
+
+        <!-- Timeline de l'incident -->
+        <section class="recovery-timeline">
+            <div class="timeline-header">
+                <div class="incident-badge">
+                    🚨 INCIDENT PIRATAGE DÉTECTÉ & RÉSOLU
+                </div>
+                <h2 class="timeline-title">Timeline de Recovery</h2>
+                <p class="timeline-subtitle">De l'infection à la résolution complète</p>
+            </div>
+
+            <div class="timeline-phases">
+                <div class="phase-card">
+                    <div class="phase-number">1</div>
+                    <h3 class="phase-title">Infection</h3>
+                    <p class="phase-period">Mars - Mai 2025</p>
+                    <p class="phase-description">
+                        Site légitime d'assèchement compromis. Injection de pages e-commerce japonaises via vulnérabilité serveur.
+                    </p>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-number">2</div>
+                    <h3 class="phase-title">Détection OSOM</h3>
+                    <p class="phase-period">Juin 2025</p>
+                    <p class="phase-description">
+                        Monitoring OSOM détecte anomalies trafic : 300+ requêtes japonaises avec 0% CTR. Alerte immédiate client.
+                    </p>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-number">3</div>
+                    <h3 class="phase-title">Résolution</h3>
+                    <p class="phase-period">Juillet 2025</p>
+                    <p class="phase-description">
+                        Nettoyage serveur, robots.txt sécurisé, suppression GSC. Trafic légitime préservé : 98 clics homepage.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Métriques de performance -->
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-icon">🎯</div>
+                <div class="metric-value" id="legitimate-clicks">98</div>
+                <div class="metric-label">Clics Légitimes Préservés</div>
+                <div class="metric-change positive">CTR 15% maintenu</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon">⚡</div>
+                <div class="metric-value" id="position-maintained">1</div>
+                <div class="metric-label">Position #1 "Assèchement"</div>
+                <div class="metric-change positive">Ranking protégé</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon">🔒</div>
+                <div class="metric-value" id="pages-cleaned">300</div>
+                <div class="metric-label">Pages Parasites Supprimées</div>
+                <div class="metric-change positive">100% nettoyage</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon">🚀</div>
+                <div class="metric-value" id="recovery-time">48</div>
+                <div class="metric-label">Heures de Résolution</div>
+                <div class="metric-change positive">Intervention rapide</div>
+            </div>
+        </section>
+
+        <!-- Graphique comparaison trafic -->
+        <section class="chart-container">
+            <h3 class="chart-title">Évolution du Trafic Légitime vs Parasite</h3>
+            <canvas id="trafficChart" width="400" height="200"></canvas>
+        </section>
+
+        <!-- Graphique détection timeline -->
+        <section class="chart-container">
+            <h3 class="chart-title">Timeline de Détection & Résolution</h3>
+            <canvas id="detectionChart" width="400" height="200"></canvas>
+        </section>
+
+        <!-- ROI Section -->
+        <section style="background: linear-gradient(135deg, var(--osom-yellow), #F59E0B); padding: 3rem; border-radius: 1rem; text-align: center; color: var(--osom-black); margin: 2rem 0;">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">Valeur Ajoutée OSOM</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div>
+                    <div style="font-size: 2rem; font-weight: 800;">✅ Détection</div>
+                    <p>Monitoring proactif multi-sources</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: 800;">⚡ Rapidité</div>
+                    <p>Résolution en 48h</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: 800;">🎯 Précision</div>
+                    <p>0 perte trafic légitime</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: 800;">📊 Transparence</div>
+                    <p>Dashboard temps réel</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 2rem; color: var(--osom-gray);">
+            <p>Dashboard généré par OSOM Digital Agency - Expertise SEO & Sécurité Web</p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem;">Données période : Janvier - Juillet 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        // Animation des compteurs au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animer les métriques
+            OSOMChartUtils.animateCounter('legitimate-clicks', 98);
+            OSOMChartUtils.animateCounter('position-maintained', 1);
+            OSOMChartUtils.animateCounter('pages-cleaned', 300);
+            OSOMChartUtils.animateCounter('recovery-time', 48);
+
+            // Graphique évolution trafic
+            const trafficData = {
+                labels: ['Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
+                dataset1: {
+                    label: 'Trafic Légitime',
+                    values: [85, 92, 78, 89, 98]
+                },
+                dataset2: {
+                    label: 'Trafic Parasite',
+                    values: [0, 15, 45, 120, 0]
+                },
+                title: 'Évolution Trafic Mensuel'
+            };
+
+            OSOMChartUtils.createComparisonChart('trafficChart', trafficData);
+
+            // Timeline de détection
+            const detectionData = {
+                dates: ['01 Mars', '15 Avril', '01 Mai', '15 Juin', '01 Juillet', '15 Juillet'],
+                values: [100, 85, 60, 45, 75, 100],
+                label: 'Score Santé Site (%)'
+            };
+
+            OSOMChartUtils.createTimelineChart('detectionChart', detectionData);
+        });
+    </script>
+</body>
+</html>

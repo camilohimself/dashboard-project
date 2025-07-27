@@ -1,0 +1,116 @@
+/* OSOM Dashboard - Styles Partagés */
+
+:root {
+  /* Couleurs OSOM */
+  --osom-yellow: #FFDD00;
+  --osom-black: #000000;
+  --osom-white: #FFFFFF;
+  --osom-gray: #1F2937;
+  --osom-red: #EF4444;
+  --osom-green: #10B981;
+  
+  /* Gradients */
+  --gradient-dark: linear-gradient(135deg, #000000 0%, #1F2937 100%);
+  --gradient-success: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  --gradient-warning: linear-gradient(135deg, #FFDD00 0%, #F59E0B 100%);
+  
+  /* Typography */
+  --font-primary: 'CeraPRO', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--gradient-dark);
+  color: var(--osom-white);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Cards */
+.metric-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 221, 0, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  border-color: var(--osom-yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 221, 0, 0.1);
+}
+
+/* Typography */
+.metric-value {
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--osom-yellow);
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Buttons */
+.btn-osom {
+  background: var(--gradient-warning);
+  color: var(--osom-black);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-osom:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(255, 221, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+  
+  .metric-value {
+    font-size: 2rem;
+  }
+}
