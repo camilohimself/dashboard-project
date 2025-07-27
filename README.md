@@ -86,8 +86,15 @@ Chaque client = Site Netlify séparé :
 1. **Créer dossier** : `Nouveau-Client/`
 2. **Copier template** : Adapter `H-Sechement/dashboard.html`
 3. **Données client** : Ajouter CSV/JSON dans dossier
-4. **Netlify setup** : Nouveau site avec base directory
-5. **Deploy** : Push = déploiement automatique
+4. **Git setup** : `git init` (branche `main` par défaut) 
+5. **Netlify setup** : Nouveau site avec base directory
+6. **Deploy** : Push = déploiement automatique
+
+### **Configuration Git**
+```bash
+# Configuration globale déjà appliquée
+git config --global init.defaultBranch main
+```
 
 ## 🎯 **Objectifs Business**
 
