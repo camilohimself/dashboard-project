@@ -100,3 +100,26 @@
 - [ ] Micro-interactions storytelling avancées
 - [ ] Easter eggs et détails créatifs cachés
 - [ ] Portfolio interactif avec études de cas immersives
+
+---
+
+## 🔧 CONFIGURATION REPOSITORY - ORDRE D'EXÉCUTION PAR DÉFAUT
+
+**📂 DOSSIER PROJECT:** `/Users/camilorivera/OSOM-dashboard-project`
+**🔗 REPOSITORY GITHUB:** `https://github.com/camilohimself/dashboard-project.git`
+
+### Commandes de Push par Défaut:
+```bash
+# 1. Vérifier la configuration
+git remote -v
+
+# 2. S'assurer du bon repository
+git remote set-url origin https://github.com/camilohimself/dashboard-project.git
+
+# 3. Push standard
+git add .
+git commit -m "MESSAGE_DESCRIPTIF"
+git push origin main
+```
+
+**⚠️ IMPORTANT:** Ce repository `dashboard-project.git` est la source officielle pour ce dossier projet. Ne pas confondre avec d'autres repos OSOM.
