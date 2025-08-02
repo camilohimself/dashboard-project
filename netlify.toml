@@ -1,13 +1,14 @@
 [build]
-  command = "npm run build"
-  publish = ".next"
+  command = "echo 'Building dashboard HTML'"
+  publish = "dashboard-client-demo"
 
 [build.environment]
   NODE_VERSION = "20"
   NPM_VERSION = "10"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# Plugin Next.js désactivé pour servir HTML statique
+# [[plugins]]
+#   package = "@netlify/plugin-nextjs"
 
 # Headers pour la sécurité
 [[headers]]
