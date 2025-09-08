@@ -1,0 +1,35 @@
+{
+  "site": "https://www.hsechement.ch/",
+  "date_test": "2025-09-08",
+  "device": "mobile",
+  "scores": {
+    "performance": null,
+    "accessibility": null,
+    "best_practices": null,
+    "seo": null
+  },
+  "core_web_vitals": {
+    "lcp": {
+      "value": null,
+      "unit": "seconds",
+      "rating": null
+    },
+    "inp": {
+      "value": null,
+      "unit": "ms", 
+      "rating": null
+    },
+    "cls": {
+      "value": null,
+      "rating": null
+    }
+  },
+  "recommendations": [
+    {
+      "title": "",
+      "impact": "",
+      "description": ""
+    }
+  ],
+  "notes": "Template pour données PageSpeed H-Séchement"
+}

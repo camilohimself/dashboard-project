@@ -1,0 +1,63 @@
+{
+  "site": "https://www.hsechement.ch/",
+  "date_test": "2025-09-08",
+  "device": "mobile",
+  "scores": {
+    "performance": 65,
+    "accessibility": 97,
+    "best_practices": 100,
+    "seo": 100
+  },
+  "core_web_vitals": {
+    "fcp": {
+      "value": 2.9,
+      "unit": "seconds",
+      "rating": "poor"
+    },
+    "lcp": {
+      "value": 11.0,
+      "unit": "seconds",
+      "rating": "poor"
+    },
+    "tbt": {
+      "value": 90,
+      "unit": "ms",
+      "rating": "needs_improvement"
+    },
+    "cls": {
+      "value": 0,
+      "rating": "good"
+    },
+    "speed_index": {
+      "value": 6.1,
+      "unit": "seconds",
+      "rating": "poor"
+    }
+  },
+  "critical_issues": [
+    {
+      "title": "Largest Contentful Paint critique",
+      "impact": "HIGH",
+      "description": "11.0s LCP = Abandon utilisateur avant chargement",
+      "solution": "Optimiser images + CDN"
+    },
+    {
+      "title": "Reduce unused JavaScript",
+      "impact": "MEDIUM", 
+      "description": "169 KiB JavaScript inutilisé",
+      "solution": "Code splitting + lazy loading"
+    },
+    {
+      "title": "Minimize main-thread work",
+      "impact": "HIGH",
+      "description": "2.7s de blocage thread principal",
+      "solution": "Optimiser JavaScript Wix"
+    }
+  ],
+  "conversion_impact": "CRITIQUE - Site trop lent pour urgences (11s LCP)",
+  "priority_actions": [
+    "Optimiser images (16 KiB savings)",
+    "Réduire JavaScript (169 KiB savings)", 
+    "Améliorer LCP < 2.5s (actuellement 11s!)"
+  ]
+}
