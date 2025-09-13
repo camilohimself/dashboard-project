@@ -2,7 +2,7 @@
   "name": "h-sechement-dashboard",
   "version": "1.0.0",
   "description": "Dashboard interactif pour H-Séchement - Sécurité et récupération d'incidents web",
-  "main": "h-sechement-dashboard/index.html",
+  "main": "h-sechement/index.html",
   "scripts": {
     "start": "python3 -m http.server 3000",
     "dev": "python3 -m http.server 3000",

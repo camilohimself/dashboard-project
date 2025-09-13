@@ -1,0 +1,24 @@
+[build]
+  # Le dossier qui contient le site à déployer
+  publish = "h-sechement"
+
+  # Pas de commande build nécessaire (site statique HTML)
+  command = "echo 'Site HTML statique - pas de build requis'"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Redirections pour SPA (optionnel)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers de sécurité
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
