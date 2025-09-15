@@ -1,6 +1,6 @@
 [build]
   # Le dossier qui contient le site à déployer
-  publish = "h-sechement"
+  publish = "h-sechement-dashboard"
 
   # Pas de commande build nécessaire (site statique HTML)
   command = "echo 'Site HTML statique - pas de build requis'"
