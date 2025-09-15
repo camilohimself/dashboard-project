@@ -1,0 +1,336 @@
+# ----------------------------------------
+# Vue d'ensemble "Générer des prospects"
+# Compte : H Sèchement
+# Propriété : H Sèchement 
+# ----------------------------------------
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Nième semaine,Nouveaux utilisateurs
+0000,9
+0001,5
+0002,6
+0003,5
+0004,12
+0005,0
+0006,1
+0007,4
+0008,3
+0009,4
+0010,2
+0011,5
+0012,7
+
+# Date de début : 20250615
+# Date de fin : 20250912
+Nième semaine,Utilisateurs connus
+0000,0
+0001,3
+0002,2
+0003,6
+0004,2
+0005,1
+0006,0
+0007,3
+0008,3
+0009,2
+0010,2
+0011,1
+0012,3
+
+# Date de début : 20250615
+# Date de fin : 20250912
+Nième semaine,Prospects qualifiés
+0000,0
+0001,0
+0002,0
+0003,0
+0004,0
+0005,0
+0006,0
+0007,0
+0008,0
+0009,0
+0010,0
+0011,0
+0012,0
+
+# Date de début : 20250615
+# Date de fin : 20250912
+Nième semaine,Prospects convertis
+0000,0
+0001,0
+0002,0
+0003,0
+0004,0
+0005,0
+0006,0
+0007,0
+0008,0
+0009,0
+0010,0
+0011,0
+0012,0
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Plate-forme,Événements clés
+
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Groupe de canaux principal du premier utilisateur (Groupe de canaux par défaut),Nouveaux utilisateurs
+Organic Search,40
+Direct,23
+
+# Arrivez-vous à fidéliser efficacement vos utilisateurs ?
+# Date de début : 20250727
+# Date de fin : 20250906
+Date,Semaine 0,Semaine 1,Semaine 2,Semaine 3,Semaine 4,Semaine 5
+27 juil. - 2 août,1
+3 août - 9 août,4
+10 août - 16 août,3
+17 août - 23 août,4
+24 août - 30 août,2
+31 août - 6 sept.,5
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Nom de l'audience,Utilisateurs actifs
+All Users,68
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Ville,Utilisateurs actifs
+Lausanne,13
+Bulle,6
+Zurich,6
+Bern,4
+Winterthur,4
+Zug,4
+Ashburn,3
+Fiesch,3
+8024,2
+Columbus,2
+Frauenfeld,2
+Geneva,2
+Lyss,2
+Monthey,2
+Thun,2
+Yverdon-les-Bains,2
+Basel,1
+Collombey,1
+Daillens,1
+Echallens,1
+Ecublens,1
+Epalinges,1
+Hausen bei Brugg,1
+Langenthal,1
+Lucerne,1
+Lutry,1
+Neuchatel,1
+Paris,1
+Pregny-Chambesy,1
+Saint-Sulpice,1
+Schaffhausen,1
+Seongnam-si,1
+Sion,1
+Uster,1
+Vernier,1
+Villeneuve,1
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Page de destination + chaîne de requête,Impressions dans la recherche naturelle Google
+/,249
+/shopdetail/21504543,32
+/shopdetail/27130965,11
+/pcmypage?callback=/product/detail/68914725,9
+/pcmypage?callback=product/detail/84049092,9
+/safe_search/config?return_url=/product/detail/55550028,9
+/shopdetail/19977276,9
+/shopdetail/3823610,9
+/pcmypage?callback=/product/detail/48705947,8
+/pcmypage?callback=product%2Fdetail%2F15089884,8
+/shopdetail/10999354,8
+/pcmypage?callback=product%2Fdetail%2F23960131,7
+/shopdetail/8160032,7
+/pcmypage?callback=product/detail/82516280,6
+/pcmypage?callback=product/detail/97566732,6
+/shopdetail/18196376,6
+/shopdetail/3575176,6
+/shopdetail/8072610,6
+/pcmypage?callback=/product%2Fdetail%2F76196481,5
+/pcmypage?callback=/product/detail/27126672,5
+/shopdetail/10382587,5
+/shopdetail/19036809,5
+/shopdetail/20253387,5
+/shopdetail/2181409,5
+/shopdetail/22673887,5
+/shopdetail/29600054,5
+/shopdetail/29658509,5
+/shopdetail/3121321,5
+/shopdetail/4273154,5
+/shopdetail/6083132,5
+/shopdetail/9047854,5
+/pcmypage?callback=/product%2Fdetail%2F90631759,4
+/pcmypage?callback=/product/detail/28892666,4
+/pcmypage?callback=product%2Fdetail%2F45306361,4
+/pcmypage?callback=product%2Fdetail%2F71225172,4
+/pcmypage?callback=product/detail/95174055,4
+/shopdetail/15420232,4
+/shopdetail/18050387,4
+/shopdetail/2925198,4
+/pcmypage?callback=/product%2Fdetail%2F28109868,3
+/pcmypage?callback=/product/detail/30321646,3
+/pcmypage?callback=/product/detail/32613910,3
+/pcmypage?callback=/product/detail/94541139,3
+/pcmypage?callback=product%2Fdetail%2F14531455,3
+/pcmypage?callback=product%2Fdetail%2F73148032,3
+/pcmypage?callback=product/detail/18874846,3
+/pcmypage?callback=product/detail/24321797,3
+/pcmypage?callback=product/detail/47687664,3
+/pcmypage?callback=product/detail/61377081,3
+/pcmypage?callback=product/detail/90895320,3
+/shopdetail/15788998,3
+/shopdetail/21877810,3
+/shopdetail/25497565,3
+/shopdetail/29478632,3
+/pcmypage?callback=/product%2Fdetail%2F15735123,2
+/pcmypage?callback=/product%2Fdetail%2F43137965,2
+/pcmypage?callback=/product%2Fdetail%2F73261749,2
+/pcmypage?callback=/product/detail/13129031,2
+/pcmypage?callback=/product/detail/16849040,2
+/pcmypage?callback=/product/detail/19290241,2
+/pcmypage?callback=/product/detail/19761335,2
+/pcmypage?callback=/product/detail/33101926,2
+/pcmypage?callback=/product/detail/40312075,2
+/pcmypage?callback=/product/detail/61601839,2
+/pcmypage?callback=/product/detail/79100785,2
+/pcmypage?callback=/product/detail/84925334,2
+/pcmypage?callback=/product/detail/85650201,2
+/pcmypage?callback=/product/detail/86756510,2
+/pcmypage?callback=/product/detail/90070659,2
+/pcmypage?callback=product%2Fdetail%2F67631107,2
+/pcmypage?callback=product/detail/33852333,2
+/pcmypage?callback=product/detail/64688907,2
+/pcmypage?callback=product/detail/70949714,2
+/pcmypage?callback=product/detail/71421579,2
+/pcmypage?callback=product/detail/93522462,2
+/pcmypage?callback=product/detail/93844776,2
+/pcmypage?callback=product/review/11312310,2
+/pcmypage?callback=product/review/39251602,2
+/pcmypage?callback=product/review/45831157,2
+/pcmypage?callback=product/review/79852912,2
+/pcmypage?callback=product/review/85278539,2
+/product/edit/27810865,2
+/safe_search/config?return_url=%2Fproduct%2Fdetail%2F84131491,2
+/safe_search/config?return_url=%2Fproduct%2Fdetail%2F94801544,2
+/safe_search/config?return_url=/product/detail/10397871,2
+/safe_search/config?return_url=/product/detail/14379255,2
+/safe_search/config?return_url=/product/detail/14552739,2
+/safe_search/config?return_url=/product/detail/19884358,2
+/safe_search/config?return_url=/product/detail/59525273,2
+/safe_search/config?return_url=/product/detail/66258925,2
+/safe_search/config?return_url=/product/detail/74826534,2
+/safe_search/config?return_url=/product/detail/86746004,2
+/safe_search/config?return_url=/product/detail/89357366,2
+/shopdetail/10682465,2
+/shopdetail/15561032,2
+/shopdetail/20058810,2
+/shopdetail/2933565,2
+/shopdetail/30925921,2
+/shopdetail/5126565,2
+/pcmypage?callback=/product%2Fdetail%2F24064605,1
+/pcmypage?callback=/product/detail/87799100,1
+/pcmypage?callback=product%2Fdetail%2F10890958,1
+/pcmypage?callback=product%2Fdetail%2F23703695,1
+/pcmypage?callback=product%2Fdetail%2F80816660,1
+/pcmypage?callback=product%2Fdetail%2F92582206,1
+/pcmypage?callback=product%2Fdetail%2F98007589,1
+/pcmypage?callback=product/detail/22052822,1
+/pcmypage?callback=product/detail/25221611,1
+/pcmypage?callback=product/detail/28652542,1
+/pcmypage?callback=product/detail/32963503,1
+/pcmypage?callback=product/detail/44353513,1
+/pcmypage?callback=product/detail/44948289,1
+/pcmypage?callback=product/detail/49508288,1
+/pcmypage?callback=product/detail/62247303,1
+/pcmypage?callback=product/detail/62279185,1
+/pcmypage?callback=product/detail/67754491,1
+/pcmypage?callback=product/detail/71272883,1
+/pcmypage?callback=product/detail/75296512,1
+/pcmypage?callback=product/detail/84263641,1
+/pcmypage?callback=product/detail/85381544,1
+/pcmypage?callback=product/detail/85476429,1
+/pcmypage?callback=product/detail/86843293,1
+/pcmypage?callback=product/detail/95959707,1
+/pcmypage?callback=product/review/23295656,1
+/pcmypage?callback=product/review/60851920,1
+/pcmypage?callback=product/review/75527848,1
+/pcmypage?callback=product/review/89075168,1
+/pcmypage?callback=product/review/97138024,1
+/product/edit/63317043,1
+/safe_search/config?return_url=%2Fproduct%2Fdetail%2F11067364,1
+/safe_search/config?return_url=%2Fproduct%2Fdetail%2F41668519,1
+/safe_search/config?return_url=%2Fproduct%2Fdetail%2F72200034,1
+/safe_search/config?return_url=%2Fproduct%2Fdetail%2F91642959,1
+/safe_search/config?return_url=/product/detail/18722649,1
+/safe_search/config?return_url=/product/detail/28100498,1
+/safe_search/config?return_url=/product/detail/29348286,1
+/safe_search/config?return_url=/product/detail/33388748,1
+/safe_search/config?return_url=/product/detail/37548757,1
+/safe_search/config?return_url=/product/detail/50361045,1
+/safe_search/config?return_url=/product/detail/51820102,1
+/safe_search/config?return_url=/product/detail/54430598,1
+/safe_search/config?return_url=/product/detail/67577213,1
+/safe_search/config?return_url=/product/detail/71180837,1
+/safe_search/config?return_url=/product/detail/71520700,1
+/safe_search/config?return_url=/product/detail/72000393,1
+/safe_search/config?return_url=/product/detail/79522141,1
+/safe_search/config?return_url=/product/detail/87193411,1
+/safe_search/config?return_url=/product/detail/94083937,1
+/shopdetail/10175332,1
+/shopdetail/10740276,1
+/shopdetail/12338398,1
+/shopdetail/15320510,1
+/shopdetail/17523287,1
+/shopdetail/17841143,1
+/shopdetail/17954598,1
+/shopdetail/18787865,1
+/shopdetail/22934632,1
+/shopdetail/25021165,1
+/shopdetail/25757432,1
+/shopdetail/7134521,1
+/shopdetail/7402510,1
+/shopdetail/7407598,1
+/shopdetail/7698954,1
+/shopdetail/8435298,1
+/shopdetail/9238809,1
+/toreka/goods_menu.html,1
+/zhHant/product/surugaya/84513253?campaign_uid=f64d716db5e979ed2f947dbaf4296895b951ae7f,1
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Requête de recherche naturelle Google,Clics dans la recherche naturelle Google
+assechement,1
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Source manuelle de la session,Sessions
+google,59
+editor.wix.com,11
+manage.wix.com,6
+search.google.com,3
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Nième jour

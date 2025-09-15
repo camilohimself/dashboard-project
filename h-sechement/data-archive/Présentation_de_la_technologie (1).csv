@@ -1,0 +1,111 @@
+# ----------------------------------------
+# Présentation de la technologie
+# Compte : H Sèchement
+# Propriété : H Sèchement 
+# ----------------------------------------
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Plate-forme,Utilisateurs actifs
+"[""Web""]",68
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Système d'exploitation,Utilisateurs actifs
+Windows,31
+Macintosh,15
+iOS,14
+Linux,5
+Android,4
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Catégorie de plate-forme et d'appareil,Utilisateurs actifs
+web / desktop,51
+web / mobile,17
+web / tablet,1
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Navigateur,Utilisateurs actifs
+Chrome,40
+Safari,19
+Edge,6
+Safari (in-app),2
+Firefox,1
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Catégorie de l'appareil,Utilisateurs actifs
+desktop,51
+mobile,17
+tablet,1
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Résolution d'écran,Utilisateurs actifs
+1920x1080,18
+1920x1200,5
+393x852,5
+800x600,5
+390x844,4
+1024x1024,3
+3840x1080,3
+1366x768,2
+1512x982,2
+402x874,2
+430x932,2
+1024x2160,1
+1024x768,1
+1280x720,1
+1280x854,1
+1280x960,1
+1368x912,1
+1418x887,1
+1440x900,1
+1500x1000,1
+1536x960,1
+1600x900,1
+1920x1243,1
+2240x1260,1
+2560x1440,1
+360x800,1
+412x915,1
+414x896,1
+5120x1440,1
+768x1024,1
+820x1180,1
+834x1194,1
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Nième jour
+
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Application,Version,État
+
+
+#  
+# Date de début : 20250912
+# Date de fin : 20250912
+Application,Utilisateurs n'ayant pas subi de plantage
+10262155422,1
+
+# Date de début : 20250911
+# Date de fin : 20250911
+Application,Utilisateurs n'ayant pas subi de plantage
+10262155422,1
+
+#  
+# Date de début : 20250615
+# Date de fin : 20250912
+Modèle de l'appareil,Utilisateurs actifs
